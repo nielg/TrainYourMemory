@@ -1,0 +1,79 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#interface{
+    width: 30vw;
+}
+#arrow-display-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: 10px 0;
+}
+#display-box{
+    text-align: center;
+    width: 100%;
+    font-size: 100px;
+    white-space: nowrap;
+
+}
+.arrow-zone{
+    width: 100%;
+    height: 100px;
+    background-color: #a6a2cd;
+    opacity: 0.5;
+}
+
+#arrow-despawn-zone{
+    bottom: 0;
+}
+.arrow{
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    animation: moveArrow 1s linear;
+}
+.display-popup{
+    opacity: 0;
+    animation: popup 1s ease;
+}
+#start-stop-btn{
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes popup{
+    50%{
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    70%{
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+@keyframes moveArrow{
+    20%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(300px);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Overflow Example</title>
+  <style>
+    .parent {
+      position: relative; /* Establish a positioning context for the child */
+      width: 300px;
+      height: 300px;
+      background-color: #f0f0f0;
+      margin: 50px auto; /* Center the parent on the page */
+      overflow: visible; /* Allow the child to exceed the parent's bounds */
+      border: 2px solid #ccc;
+    }
+
+    .child {
+      position: absolute;
+      top: 50%;
+      left: 50%; /* Center horizontally based on parent's dimensions */
+      transform: translate(-50%, -50%); /* Align the center of the child with the parent's center */
+      width: 200px; /* Wider than the parent */
+      background-color: #8B85C1;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      white-space: nowrap; /* Prevent text wrapping */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .child:hover{
+        width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child">I'm centered and overflow evenly on both sides!</div>
+  </div>
+</body>
+</html>

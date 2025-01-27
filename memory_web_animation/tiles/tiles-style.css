@@ -1,0 +1,103 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#interface{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: visible;
+    gap: 50px;
+    margin: 40px 20px;
+    width: 50vw;
+    max-width: 500px;
+
+}
+#big-game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: -1;
+    color: black;
+    transition: opacity 0.5s ease, font-size 1s ease;
+    opacity: 0;
+    font-size: 50px;
+    white-space: nowrap;
+}
+#big-game-over.active{
+    z-index: 1;
+    opacity: 0.9;
+    font-size: 150px;
+}
+#big-game-over.pull-back{
+    opacity: 0;
+}
+.grid-tiles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+.tile {
+    border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 1;
+    transform-style: preserve-3d; 
+    transition: transform 0.8s ease; 
+
+}
+    .tile.fliped {
+        transform: rotateY(180deg); 
+    }
+
+    .tile-front, .tile-back {
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        border-radius: 10px;
+    }
+
+    .tile-front {
+        background-color: rgb(50, 45, 80);
+    }
+
+    .tile-back {
+        background-color: #8B0000; 
+        transform: rotateY(180deg); 
+    }
+
+
+            .tile-back.white{
+                background-color: #F0F8FF;
+            }
+
+#info-bottom, #info-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+    #start-stop-btn, #lives{
+        width: 47%;
+    }
+    #score{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    #game-over{
+        visibility: hidden;    
+    }
